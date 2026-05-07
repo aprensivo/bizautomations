@@ -1,0 +1,61 @@
+:root {
+  /* ── Colour ───────────────────────────────────────────── */
+  --ink:       #16161A;
+  --bone:      #F1ECE2;
+  --ink-blue:  #0B1B2B;
+  --cinnabar:  #E5451E;
+  --acid:      #D8FF3D;
+  --iron:      #3A3A3F;
+  --bone-dim:  #E8E3D5;
+
+  /* ── Type scale (ratio 1.25) ──────────────────────────── */
+  --text-xs:   0.75rem;     /* 12px */
+  --text-sm:   0.875rem;    /* 14px */
+  --text-base: 1rem;        /* 16px */
+  --text-lg:   1.125rem;    /* 18px */
+  --text-xl:   1.25rem;     /* 20px */
+  --text-2xl:  1.5625rem;   /* 25px */
+  --text-3xl:  1.9375rem;   /* 31px */
+  --text-4xl:  2.4375rem;   /* 39px */
+  --text-5xl:  3.0625rem;   /* 49px */
+  --text-6xl:  3.8125rem;   /* 61px */
+  --text-7xl:  4.75rem;     /* 76px */
+  --text-display: clamp(3.5rem, 9vw, 7.5rem);
+
+  /* ── Spacing (4px base) ───────────────────────────────── */
+  --space-1:  0.25rem;
+  --space-2:  0.5rem;
+  --space-3:  0.75rem;
+  --space-4:  1rem;
+  --space-6:  1.5rem;
+  --space-8:  2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+  --space-32: 8rem;
+
+  /* ── Layout ───────────────────────────────────────────── */
+  --content-width: 1280px;
+  --gutter:        clamp(1.25rem, 4vw, 3rem);
+
+  /* ── Motion ───────────────────────────────────────────── */
+  --ease-snap:    cubic-bezier(0.2, 0.8, 0.2, 1);
+  --duration-fast: 180ms;
+  --duration-mid:  240ms;
+  --duration-slow: 320ms;
+
+  /* ── Border ───────────────────────────────────────────── */
+  --border-rule:   1px solid var(--iron);
+  --radius-sm:     4px;
+  --radius-md:     8px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --duration-fast: 0ms;
+    --duration-mid:  0ms;
+    --duration-slow: 0ms;
+  }
+}

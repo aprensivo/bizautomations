@@ -1,0 +1,161 @@
+/* ── Page wrapper ─────────────────────────────────────────── */
+
+.container {
+  width: 100%;
+  max-width: var(--content-width);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+/* ── Section base ─────────────────────────────────────────── */
+
+section, header, footer {
+  position: relative;
+  padding-block: clamp(4rem, 10vw, 8rem);
+}
+
+/* ── Section numbering ────────────────────────────────────── */
+
+.section-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: var(--text-sm);
+  letter-spacing: 0.08em;
+  opacity: 0.45;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-8);
+}
+
+.section-label::before {
+  content: '';
+  display: block;
+  width: 2rem;
+  height: 1px;
+  background: currentColor;
+  flex-shrink: 0;
+}
+
+/* ── Dark sections (Ink Blue) ─────────────────────────────── */
+
+.dark-section {
+  background: var(--ink-blue);
+  color: var(--bone);
+}
+
+.dark-section .section-label {
+  color: var(--bone);
+}
+
+/* ── Light sections (Bone) ────────────────────────────────── */
+
+.light-section {
+  background: var(--bone);
+  color: var(--ink);
+}
+
+/* ── Section divider rule ─────────────────────────────────── */
+
+.section-rule {
+  border: none;
+  border-top: var(--border-rule);
+  margin: 0;
+}
+
+/* ── Responsive grid helpers ──────────────────────────────── */
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-8);
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+}
+
+@media (min-width: 640px) {
+  .grid-2 { grid-template-columns: repeat(2, 1fr); }
+  .grid-3 { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 1024px) {
+  .grid-3 { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* ── Hero layout ─────────────────────────────────────────── */
+
+.hero-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-8);
+  min-height: 90vh;
+  align-items: center;
+  padding-block: clamp(5rem, 12vw, 9rem);
+}
+
+@media (min-width: 1024px) {
+  .hero-layout {
+    grid-template-columns: 1fr auto;
+    min-height: 70vh;
+    gap: 0;
+  }
+}
+
+/* ── How it works – step layout ──────────────────────────── */
+
+.steps {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  .steps {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .step + .step::before {
+    content: '→';
+    font-family: 'JetBrains Mono', monospace;
+    font-size: var(--text-2xl);
+    color: var(--cinnabar);
+    position: absolute;
+    top: var(--space-8);
+    transform: translateX(-50%);
+  }
+}
+
+/* ── Two-col about layout ─────────────────────────────────── */
+
+.about-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-12);
+  align-items: start;
+}
+
+@media (min-width: 768px) {
+  .about-layout {
+    grid-template-columns: 1fr 1.5fr;
+  }
+}
+
+/* ── Contact form + info split ────────────────────────────── */
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-12);
+}
+
+@media (min-width: 768px) {
+  .contact-layout {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+}
